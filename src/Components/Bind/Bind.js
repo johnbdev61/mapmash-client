@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Mash() {
-  return (
-    <>
-      <section>
-        <h2>Halo 3 Mash</h2>
-        <button>Go Back</button>
-        <p>Rating: 4 / 5</p>
-        <p>Date Created: 12-01-2020</p>
+export default class Bind extends Component {
+  render() {
+    return (
+      <div>
         <table>
           <tr>
             <th>Controller Button</th>
@@ -78,12 +74,7 @@ export default function Mash() {
             <td>Unused</td>
           </tr>
         </table>
-        <h3>Notes</h3>
-        <p>
-          This is the ultimate Mash for Halo 3 competitive players. I dare you
-          to come up with something better!
-        </p>
-      </section>
-    </>
-  )
+      </div>
+    )
+  }
 }

@@ -1,15 +1,13 @@
 import React from 'react'
+import SearchMashCard from '../SearchMashCard/SearchMashCard'
 
 export default function SearchList() {
   return (
     <>
       <section className='search-list'>
-        <h2>Mash List for Modern Warfare</h2>
+        <h2>Mash List for Game Title</h2>
         <span className='results'>
-          <h3>Modern Warfare</h3>
-          <p>User: JohnFrags123</p>
-          <p>Rating: 4 / 5</p>
-          <p>Date Created: 12-01-2020</p>
+          <SearchMashCard />
         </span>
       </section>
     </>
