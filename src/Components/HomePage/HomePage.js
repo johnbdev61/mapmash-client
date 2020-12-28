@@ -2,15 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import config from '../../config'
 import TokenService from '../../services/token-service'
+import MashApiService from '../../services/mash-api-service'
+import MyMashCard from '../MyMashCard/MyMashCard'
 
 export default class HomePage extends React.Component {
+  state = { mashes: []}
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     console.log('LOGGED OUT')
   }
   componentDidMount() {
     console.log(process.env)
-    fetch(`${config.API_ENDPOINT}/mashes?user_id=1`) //TODO: Refactor to dynamically populate user id
+    MashApiService.getMashes().then((data) => this.setState({ mashes: data }))
   }
 
   render() {
@@ -30,11 +33,7 @@ export default class HomePage extends React.Component {
         <section className='user-mash-list'>
           <h2>User Mash List</h2>
           <div className='mash-card mash-card:hover'>
-            <h3>
-              <a href='/OpenMash.html'>Halo 3</a>
-            </h3>
-            <p>Rating: 4.8 / 5</p>
-            <p>Date Created: 12-01-2020</p>
+            {this.state.mashes.map((mash) => <MyMashCard game_title= {mash.game_title} votes={mash.votes} date_modified= {mash.date_modified}/>)}
           </div>
         </section>
       </>

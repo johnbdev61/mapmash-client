@@ -9,6 +9,7 @@ import Mash from '../MyMash/MyMash'
 import SearchList from '../SearchList/SearchList'
 import SearchMash from '../SearchMash/SearchMash'
 import RegistrationForm from '../RegistrationForm/RegistrationForm'
+// import {UserContext}
 
 export default class App extends Component {
   state = {

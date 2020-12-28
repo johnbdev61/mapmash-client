@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function MashCard() {
+export default function MashCard(props) {
   return (
     <>
       <section className='mash-card'>
-        <h3>Halo 3</h3>
-        <p>Score</p>
-        <p>Date Created: 12-01-2020</p>
+        <h3>{props.game_title}</h3>
+        <p>Votes: {props.votes}</p>
+        <p>Date Modified: {props.date_modified}</p>
       </section>
     </>
   )
