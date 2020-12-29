@@ -6,7 +6,7 @@ import MashApiService from '../../services/mash-api-service'
 import MyMashCard from '../MyMashCard/MyMashCard'
 
 export default class HomePage extends React.Component {
-  state = { mashes: []}
+  state = { mashes: [] }
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     console.log('LOGGED OUT')
@@ -21,19 +21,26 @@ export default class HomePage extends React.Component {
       <>
         <h1>Map Mash</h1>
         <section>
+          <Link to='/mash-form'>Create New Mash</Link>
           <form action=''>
-            <button className='add-mash' to='/mash-form'>
-              Create New Mash
-            </button>
-            <Link></Link>
             <input type='text' placeholder='Enter Game' />
             <button className='search-game'>Search</button>
           </form>
+          <Link onClick={this.handleLogoutClick} to='/'>
+            Log Out
+          </Link>
         </section>
         <section className='user-mash-list'>
           <h2>User Mash List</h2>
           <div className='mash-card mash-card:hover'>
-            {this.state.mashes.map((mash) => <MyMashCard game_title= {mash.game_title} votes={mash.votes} date_modified= {mash.date_modified}/>)}
+            {this.state.mashes.map((mash) => (
+              <MyMashCard
+                mashId={mash.id}
+                game_title={mash.game_title}
+                votes={mash.votes}
+                date_modified={mash.date_modified}
+              />
+            ))}
           </div>
         </section>
       </>

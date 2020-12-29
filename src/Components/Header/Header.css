@@ -1,0 +1,13 @@
+h1 {
+  font-family: 'Jura', sans-serif;
+  text-align: center;
+}
+
+p,
+a {
+  font-family: 'Spinnaker', sans-serif;
+}
+
+.Header__not-logged-in {
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+.LoginForm {
+  text-align: center;
+}
+
+input {
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-family: 'Spinnaker', sans-serif;
+}

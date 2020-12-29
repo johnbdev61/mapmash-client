@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
 import config from '../../config'
+import ApiContext from '../../ApiContext'
 import Header from '../Header/Header'
 import LoginForm from '../LoginForm/LoginForm'
 import HomePage from '../HomePage/HomePage'
@@ -14,27 +15,8 @@ import RegistrationForm from '../RegistrationForm/RegistrationForm'
 export default class App extends Component {
   state = {
     mashes: [],
-    binds: [],
-  }
-
-  // componentDidMount() {
-  //   Promise.all([
-  //     fetch(`${config.API_ENDPOINT}/mashes`),
-  //     fetch(`${config.API_ENDPOINT}/binds`),
-  //   ])
-  //     .then(([mashesRes, bindsRes]) => {
-  //       if (!mashesRes.ok)
-  //         return mashesRes.json().then((event) => Promise.reject(event))
-  //       if (!bindsRes.ok)
-  //         return bindsRes.json().then((event) => Promise.reject(event))
-  //     })
-  //     .then(([mashes, binds]) => {
-  //       this.setState({ mashes, binds })
-  //     })
-  //     .catch((error) => {
-  //       console.error({ error })
-  //     })
-  // }
+    binds: [{}],
+  } //TODO: Implement context
 
   render() {
     return (
