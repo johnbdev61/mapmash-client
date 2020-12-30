@@ -1,33 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import MashApiService from '../../services/mash-api-service'
+import { Link, Redirect } from 'react-router-dom'
 import MyMashCard from '../MyMashCard/MyMashCard'
 
 export default class HomePage extends React.Component {
-  state = {
-    mashes: [],
-    gameTitle: '',
-  }
-
-  componentDidMount() {
-    console.log(process.env)
-    MashApiService.getMashes().then((data) => this.setState({ mashes: data }))
-  }
-  handleLogoutClick = () => {
-    TokenService.clearAuthToken()
-    console.log('LOGGED OUT')
-  }
-  handleInputChange = (event) => {
-    const { value } = event.target
-    this.setState({ gameTitle: value })
-  }
-  handleSubmit = () => {
-    const { gameTitle } = this.state
-    this.props.history.push(`/game/${gameTitle}/mashes`)
-  }
-
+  state = { redirectUrl: '' }
   render() {
+    if (this.state.redirectUrl) {
+      return <Redirect to={this.state.redirectUrl} />
+    }
     return (
       <>
         <h1>Map Mash</h1>
@@ -36,25 +16,33 @@ export default class HomePage extends React.Component {
           <input
             type='text'
             placeholder='Enter Game Title'
-            onChange={this.handleInputChange}
+            onChange={this.props.handleInputChange}
           />
-          <button className='search-game' onClick={this.handleSubmit}>
+          <button
+            className='search-game'
+            onClick={() => {
+              let redirectUrl = this.props.handleSubmit(this.props.history)
+              this.setState({ redirectUrl })
+            }}
+          >
             Search
           </button>
-          <Link onClick={this.handleLogoutClick} to='/'>
+          <Link onClick={this.props.handleLogoutClick} to='/'>
             Log Out
           </Link>
         </section>
         <section className='user-mash-list'>
           <h2>User Mash List</h2>
           <div className='mash-card mash-card:hover'>
-            {this.state.mashes.map((mash) => (
+            {this.props.mashes.map((mash) => (
               <MyMashCard
+                key={mash.id}
                 mashId={mash.id}
                 game_title={mash.game_title}
+                auth_id={mash.auth_id}
                 votes={mash.votes}
                 date_modified={mash.date_modified}
-              />
+              />              
             ))}
           </div>
         </section>

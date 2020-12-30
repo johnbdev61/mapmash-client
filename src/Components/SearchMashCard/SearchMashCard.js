@@ -7,7 +7,7 @@ export default function SearchMashCard(props) {
     <>
       <section className='mash-card mash-card:hover'>
         <h3>
-          <Link to={`/game/:gameName/mashes/${props.mashId}`}>
+          <Link to={`/game/${props.game_title}/mashes/${props.mashId}`}>
             {props.game_title}
           </Link>
         </h3>

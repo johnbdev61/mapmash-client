@@ -16,15 +16,23 @@ export default class Mash extends React.Component {
       this.props.history.push('/home')
     )
   }
+  handleLikeClick = () => {}
+  
   render() {
     console.log('MASH', this.state.mash)
     return (
       <>
         <section>
           <h2>{this.state.mash.game_title}</h2>
-          <section className='Delete'>
-            <button onClick={this.handleDeleteClick}>Delete</button>
-          </section>
+          {this.props.isUserMash ? (
+            <section className='Delete'>
+              <button onClick={this.handleDeleteClick}>Delete</button>
+            </section>
+          ) : (
+            <section className='Delete'>
+              <button onClick={this.handleLikeClick}>Like Mash</button>
+            </section>
+          )}
           <p>Date Modified: {this.state.mash.date_modified}</p>
           <Bind binds={this.state.mash.binds} />
           <h3>Notes</h3>
