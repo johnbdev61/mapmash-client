@@ -1,0 +1,13 @@
+th {
+  font-family: 'Jura', sans-serif;
+}
+
+td {
+  font-family: 'Spinnaker', sans-serif;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}

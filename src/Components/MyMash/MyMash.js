@@ -1,24 +1,35 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Bind from '../Bind/Bind'
+import MashApiService from '../../services/mash-api-service'
 
 export default class Mash extends React.Component {
+  state = { mash: {} }
+  componentDidMount() {
+    console.log('MASH ID', this.props.match.params.mashId)
+    MashApiService.getMash(this.props.match.params.mashId).then((mash) =>
+      this.setState({ mash })
+    )
+  }
+  handleDeleteClick = () => {
+    MashApiService.deleteMash(this.props.match.params.mashId).then(() =>
+      this.props.history.push('/home')
+    )
+  }
   render() {
+    console.log('MASH', this.state.mash)
     return (
       <>
         <section>
-          <h2>Halo 3 Mash</h2>
-          <button>Go Back</button>
-          <section className='EditDelete'>
-            <button>Edit</button>
-            <button>Delete</button>
+          <h2>{this.state.mash.game_title}</h2>
+          <section className='Delete'>
+            <button onClick={this.handleDeleteClick}>Delete</button>
           </section>
-          <p>Date Created: 12-01-2020</p>
-          <Bind />
+          <p>Date Modified: {this.state.mash.date_modified}</p>
+          <Bind binds={this.state.mash.binds} />
           <h3>Notes</h3>
-          <p>
-            This is the ultimate Mash for Halo 3 competitive players. I dare you
-            to come up with something better!
-          </p>
+          <p>{this.state.mash.notes}</p>
+          <Link to='/home'>Go Back</Link>
         </section>
       </>
     )

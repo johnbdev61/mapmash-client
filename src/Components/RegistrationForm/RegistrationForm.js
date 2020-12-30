@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../services/auth-api-service'
 import './RegistrationForm.css'
@@ -8,7 +9,10 @@ export default class RegistrationForm extends Component {
     onRegistrationSuccess: () => {},
   }
 
-  state = { error: null }
+  state = { 
+    error: null,
+    isAuthenticated: false, //TODO: Make this work
+  }
 
   handleSubmit = (ev) => {
     ev.preventDefault()
@@ -29,6 +33,10 @@ export default class RegistrationForm extends Component {
       })
   }
   render() {
+    const { isAuthenticated } = this.state
+    if (isAuthenticated) {
+      return <Redirect to='/home' />
+    }
     const { error } = this.state
     return (
       <form className='RegistrationForm' onSubmit={this.handleSubmit}>

@@ -1,13 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './SearchMashCard.css'
 
-export default function SearchMashCard() {
+export default function SearchMashCard(props) {
   return (
     <>
-      <section className='mash-card'>
-        <h3>Halo 3</h3>
-        <p>Mash Creator Name</p>
-        <p>Score</p>
-        <p>Date Created: 12-01-2020</p>
+      <section className='mash-card mash-card:hover'>
+        <h3>
+          <Link to={`/game/:gameName/mashes/${props.mashId}`}>
+            {props.game_title}
+          </Link>
+        </h3>
+        <p>Mash by User</p>
+        <p>Votes: {props.votes}</p>
+        <p>Date Modified: {props.date_modified}</p>
       </section>
     </>
   )

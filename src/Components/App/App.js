@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
-import config from '../../config'
-import ApiContext from '../../ApiContext'
 import Header from '../Header/Header'
 import LoginForm from '../LoginForm/LoginForm'
 import HomePage from '../HomePage/HomePage'
 import MashForm from '../MashForm/MashForm'
 import Mash from '../MyMash/MyMash'
+import SearchMashCard from '../SearchMashCard/SearchMashCard'
 import SearchList from '../SearchList/SearchList'
-import SearchMash from '../SearchMash/SearchMash'
 import RegistrationForm from '../RegistrationForm/RegistrationForm'
-// import {UserContext}
+import SearchMash from '../SearchMash/SearchMash'
 
 export default class App extends Component {
-  state = {
-    mashes: [],
-    binds: [{}],
-  } //TODO: Implement context
-
   render() {
     return (
       <BrowserRouter>
@@ -32,21 +25,15 @@ export default class App extends Component {
             <Route path='/login'>
               <LoginForm />
             </Route>
-            <Route path='/home'>
-              <HomePage />
-            </Route>
+            <Route path='/home' component={HomePage} />
             <Route path='/mash-form'>
               <MashForm />
             </Route>
-            <Route path='/my-mash'>
-              <Mash />
-            </Route>
-            <Route path='/search'>
+            <Route component={Mash} path='/mashes/:mashId' />
+            <Route component={SearchMashCard} path='/game/:gameName/mashes'>
               <SearchList />
             </Route>
-            <Route path='/search-mash'>
-              <SearchMash />
-            </Route>
+            <Route component={SearchMash} path='/game/:gameName/mashes/:mashId' />
           </Switch>
         </div>
       </BrowserRouter>
