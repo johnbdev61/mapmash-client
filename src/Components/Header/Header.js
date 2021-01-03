@@ -7,7 +7,6 @@ import './Header.css'
 export default class Header extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
-    /* when logging out, clear the callbacks to the refresh api and idle auto logout */
   }
 
   renderLogoutLink() {
@@ -33,7 +32,7 @@ export default class Header extends Component {
   render() {
     return (
       <section className='Header'>
-        <h1>Map Mash Client</h1>
+        <h1>Welcome to Map Mash</h1>
         <p>
           This application is for gamers who want to show off their perfect
           button layouts (Mashes) for any game on Xbox. Map Mash is also the

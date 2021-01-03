@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import ApiContext from '../../ApiContext'
-import config from '../../config'
-import TokenService from '../../services/token-service'
 
 class MashForm extends React.Component {
   static defaultProps = {
@@ -11,60 +9,12 @@ class MashForm extends React.Component {
   }
   static contextType = ApiContext
 
-  handleCreateMash = (event) => {
-    event.preventDefault()
-    console.log(event)
-    const newMash = {
-      game_title: event.target.game_title.value,
-      notes: event.target.notes.value,
-      date_modified: new Date().toISOString(),
-    }
-    fetch(`${config.API_ENDPOINT}/mashes`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `bearer ${TokenService.getAuthToken()}`,
-      },
-      body: JSON.stringify(newMash),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        console.log('MASH ID', result.id)
-        let formData = new FormData(event.target)
-        let newBind = []
-        for (let [key, value] of formData) {
-          if (key !== 'game_title' && key !== 'notes') {
-            newBind.push({
-              mash_id: result.id,
-              key_input: key,
-              key_action: value,
-            })
-          }
-        }
-        console.log('NEW BIND', newBind)
-        fetch(`${config.API_ENDPOINT}/binds`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            authorization: `bearer ${TokenService.getAuthToken()}`,
-          },
-          body: JSON.stringify(newBind),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log('ALL BINDS', result)
-          })
-        this.props.onCreateMash(result)
-        this.props.history.push('/home')
-      })
-  }
-
   render() {
     return (
       <>
         <section className='mash-form'>
           <h2>New Mash</h2>
-          <form action='' onSubmit={(e) => this.handleCreateMash(e)}>
+          <form action='' onSubmit={(e) => this.props.onSubmit(e)}>
             <label for='enter-game'>Game</label>
             <br />
             <input type='text' name='game_title' />

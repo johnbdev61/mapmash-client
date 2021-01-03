@@ -2,10 +2,10 @@ import config from '../config'
 import TokenService from './token-service'
 
 const MashApiService = {
-  getMashes() {
-    return fetch(`${config.API_ENDPOINT}/mashes`, {
+  getMashes(userId) {
+    return fetch(`${config.API_ENDPOINT}/mashes?user_id=${userId}`, {
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -14,7 +14,7 @@ const MashApiService = {
   getMash(mashId) {
     return fetch(`${config.API_ENDPOINT}/mashes/${mashId}`, {
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
@@ -24,10 +24,13 @@ const MashApiService = {
     return fetch(`${config.API_ENDPOINT}/mashes/${mashId}`, {
       method: 'DELETE',
       headers: {
-        authorization: `bearer ${TokenService.getAuthToken()}`,
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
       },
     })
   },
+  addVote(mashId) {
+    return fetch(`${config.API_ENDPOINT}/mashes/${mashId}`)
+  }
 }
 
 export default MashApiService

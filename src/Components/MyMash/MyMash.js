@@ -16,7 +16,8 @@ export default class Mash extends React.Component {
       this.props.history.push('/home')
     )
   }
-  handleLikeClick = () => {}
+  handleLikeClick = () => {
+  }
   
   render() {
     console.log('MASH', this.state.mash)
@@ -33,7 +34,7 @@ export default class Mash extends React.Component {
               <button onClick={this.handleLikeClick}>Like Mash</button>
             </section>
           )}
-          <p>Date Modified: {this.state.mash.date_modified}</p>
+          <p>Date Created: {this.state.mash.date_modified}</p>
           <Bind binds={this.state.mash.binds} />
           <h3>Notes</h3>
           <p>{this.state.mash.notes}</p>

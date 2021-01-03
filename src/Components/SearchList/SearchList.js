@@ -13,7 +13,7 @@ export default function SearchList(props) {
         <h2>Mash List for {props.game_title}</h2>
         <span className='results'>
           {mashByGame.map((mash) => (
-            <MyMashCard {...mash} mashId={mash.id} />
+            <MyMashCard key={mash.id} {...mash} mashId={mash.id} />
           ))}
         </span>
       </section>

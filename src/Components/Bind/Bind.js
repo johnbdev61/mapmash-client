@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import MashApiService from '../../services/mash-api-service'
 import './Bind.css'
 
-export default class Bind extends Component { //TODO: FIX ERROR AFTER REFRESH
+export default class Bind extends Component {
+  //TODO: FIX ERROR AFTER REFRESH
   static defaultProps = {
-    binds: []
+    binds: [],
   }
   renderTableData() {
     return this.props.binds.map((bind) => {

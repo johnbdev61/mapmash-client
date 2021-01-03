@@ -9,9 +9,9 @@ export default class RegistrationForm extends Component {
     onRegistrationSuccess: () => {},
   }
 
-  state = { 
+  state = {
     error: null,
-    isAuthenticated: false, //TODO: Make this work
+    isAuthenticated: false,
   }
 
   handleSubmit = (ev) => {
@@ -39,32 +39,35 @@ export default class RegistrationForm extends Component {
     }
     const { error } = this.state
     return (
-      <form className='RegistrationForm' onSubmit={this.handleSubmit}>
-        <div role='alert'>{error && <p className='red'>{error}</p>}</div>
-        <div className='username'>
-          <label htmlFor='RegistrationForm__username'>
-            Username <Required />
-          </label>
-          <Input
-            name='username'
-            type='text'
-            required
-            id='RegistrationForm__user_name'
-          ></Input>
-        </div>
-        <div className='password'>
-          <label htmlFor='RegistrationForm__password'>
-            Password <Required />
-          </label>
-          <Input
-            name='password'
-            type='password'
-            required
-            id='RegistrationForm__password'
-          ></Input>
-        </div>
-        <Button type='submit'>Register</Button>
-      </form>
+      <>
+        <h1>Register to Use Map Mash</h1>
+        <form className='RegistrationForm' onSubmit={this.handleSubmit}>
+          <div role='alert'>{error && <p className='red'>{error}</p>}</div>
+          <div className='username'>
+            <label htmlFor='RegistrationForm__username'>
+              Username <Required />
+            </label>
+            <Input
+              name='username'
+              type='text'
+              required
+              id='RegistrationForm__user_name'
+            ></Input>
+          </div>
+          <div className='password'>
+            <label htmlFor='RegistrationForm__password'>
+              Password <Required />
+            </label>
+            <Input
+              name='password'
+              type='password'
+              required
+              id='RegistrationForm__password'
+            ></Input>
+          </div>
+          <Button type='submit'>Register</Button>
+        </form>
+      </>
     )
   }
 }

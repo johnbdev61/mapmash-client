@@ -10,7 +10,7 @@ export default function MashCard(props) {
           <Link to={`/mashes/${props.mashId}`}>{props.game_title}</Link>
         </h3>
         <p>Votes: {props.votes}</p>
-        <p>Date Modified: {props.date_modified}</p>
+        <p>Date Created: {props.date_modified}</p>
       </section>
     </>
   )
