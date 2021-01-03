@@ -30,6 +30,7 @@ export default class App extends Component {
   }
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
+    this.setState({ isLoggedIn: false })
     console.log('LOGGED OUT')
   }
   handleInputChange = (event) => {
@@ -105,7 +106,7 @@ export default class App extends Component {
         <div className='App'>
           <Switch>
             <Route exact path='/'>
-              <Header />
+            <Header handleLogoutClick={this.handleLogoutClick} />
             </Route>
             <Route path='/register'>
               <RegistrationForm />
