@@ -11,7 +11,7 @@ export default class Nav extends Component {
     return (
       <>
         <Link to='home'>
-          <h1>Map Mash</h1>
+          <h1 className='header'>Map Mash</h1>
         </Link>
         <section className='nav-bar'>
           <Link to='/mash-form'>Create New Mash</Link>

@@ -26,6 +26,7 @@ export default class LoginForm extends React.Component {
       .then(() => {
         console.log('login successful')
         this.setState({ isAuthenticated: true })
+        this.props.onLogin(true)
       })
       .catch((res) => {
         console.log('ERROR', res)

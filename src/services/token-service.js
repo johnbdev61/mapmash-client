@@ -25,9 +25,9 @@ const TokenService = {
       }
     }
     const user = parseJwt(window.localStorage[config.TOKEN_KEY])
-    console.log('USER', user)
-    console.log('ID#', user.user_id)
-    return user.user_id
+    // console.log('USER', user)
+    // console.log('ID#', user?.user_id)
+    return user?.user_id
   },
 }
 

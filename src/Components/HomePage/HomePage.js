@@ -1,5 +1,6 @@
 import React from 'react'
 import MyMashCard from '../MyMashCard/MyMashCard'
+import './HomePage.css'
 
 export default class HomePage extends React.Component {
   render() {

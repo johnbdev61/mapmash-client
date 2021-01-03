@@ -9,7 +9,6 @@ import Mash from '../MyMash/MyMash'
 import config from '../../config'
 import SearchList from '../SearchList/SearchList'
 import RegistrationForm from '../RegistrationForm/RegistrationForm'
-import SearchMash from '../SearchMash/SearchMash'
 import TokenService from '../../services/token-service'
 import MashApiService from '../../services/mash-api-service'
 
@@ -17,14 +16,17 @@ export default class App extends Component {
   state = {
     mashes: [],
     gameTitle: '',
+    isLoggedIn: false,
   }
 
   componentDidMount() {
     console.log(process.env)
     const userId = TokenService.getUserId()
-    MashApiService.getMashes(userId).then((data) =>
-      this.setState({ mashes: data })
-    )
+    if (userId) {
+      MashApiService.getMashes(userId).then((data) =>
+        this.setState({ mashes: data })
+      )
+    }
   }
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
@@ -38,13 +40,16 @@ export default class App extends Component {
     const { gameTitle } = this.state
     return `/game/${gameTitle}/mashes`
   }
+  handleLoginStatus = (isLoggedIn) => {
+    this.setState({ isLoggedIn })
+  }
   handleCreateMash = (event) => {
     event.preventDefault()
     console.log(event)
     const newMash = {
       game_title: event.target.game_title.value,
       notes: event.target.notes.value,
-      date_modified: new Date().toISOString(),
+      date_modified: new Date().toISOString().substring(0, 10),
     }
     fetch(`${config.API_ENDPOINT}/mashes`, {
       method: 'POST',
@@ -86,14 +91,17 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(window.location.pathname)
     return (
       <BrowserRouter>
-        <Nav
-          handleCreateMash={this.handleCreateMash}
-          handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}
-          handleLogoutClick={this.handleLogoutClick}
-        />
+        {this.state.isLoggedIn && (
+          <Nav
+            handleCreateMash={this.handleCreateMash}
+            handleInputChange={this.handleInputChange}
+            handleSubmit={this.handleSubmit}
+            handleLogoutClick={this.handleLogoutClick}
+          />
+        )}
         <div className='App'>
           <Switch>
             <Route exact path='/'>
@@ -103,7 +111,7 @@ export default class App extends Component {
               <RegistrationForm />
             </Route>
             <Route path='/login'>
-              <LoginForm />
+              <LoginForm onLogin={this.handleLoginStatus} />
             </Route>
             <Route
               path='/home'
@@ -124,10 +132,7 @@ export default class App extends Component {
               )}
               path='/game/:gameName/mashes'
             ></Route>
-            <Route
-              component={SearchMash}
-              path='/game/:gameName/mashes/:mashId'
-            />
+            <Route component={Mash} path='/game/:gameName/mashes/:mashId' />
           </Switch>
         </div>
       </BrowserRouter>
