@@ -3,14 +3,10 @@ import { Link, Redirect } from 'react-router-dom'
 import './Nav.css'
 
 export default class Nav extends Component {
-  state = { redirectUrl: '' }
   render() {
-    if (this.state.redirectUrl) {
-      return <Redirect to={this.state.redirectUrl} />
-    }
     return (
       <>
-        <Link to='home'>
+        <Link to='/home'>
           <h1 className='header'>Map Mash</h1>
         </Link>
         <section className='nav-bar'>
@@ -21,13 +17,7 @@ export default class Nav extends Component {
             placeholder='Enter Game Title'
             onChange={this.props.handleInputChange}
           />
-          <button
-            className='search-game'
-            onClick={() => {
-              let redirectUrl = this.props.handleSubmit(this.props.history)
-              this.setState({ redirectUrl })
-            }}
-          >
+          <button className='search-game' onClick={this.props.handleSubmit}>
             Search
           </button>
           <br />

@@ -20,6 +20,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    console.log('app re-mounting')
     console.log(process.env)
     const userId = TokenService.getUserId()
     if (userId) {
@@ -27,6 +28,7 @@ export default class App extends Component {
         this.setState({ mashes: data })
       )
     }
+    this.setState({ isLoggedIn: !!userId })
   }
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
@@ -37,9 +39,9 @@ export default class App extends Component {
     const { value } = event.target
     this.setState({ gameTitle: value })
   }
-  handleSubmit = (history) => {
+  handleSubmit = () => {
     const { gameTitle } = this.state
-    return `/game/${gameTitle}/mashes`
+    window.location.replace(`/game/${gameTitle}/mashes`)
   }
   handleLoginStatus = (isLoggedIn) => {
     this.setState({ isLoggedIn })
@@ -95,18 +97,18 @@ export default class App extends Component {
     console.log(window.location.pathname)
     return (
       <BrowserRouter>
-        {this.state.isLoggedIn && (
-          <Nav
-            handleCreateMash={this.handleCreateMash}
-            handleInputChange={this.handleInputChange}
-            handleSubmit={this.handleSubmit}
-            handleLogoutClick={this.handleLogoutClick}
-          />
-        )}
         <div className='App'>
+          {this.state.isLoggedIn && (
+            <Nav
+              handleCreateMash={this.handleCreateMash}
+              handleInputChange={this.handleInputChange}
+              handleSubmit={this.handleSubmit}
+              handleLogoutClick={this.handleLogoutClick}
+            />
+          )}
           <Switch>
             <Route exact path='/'>
-            <Header handleLogoutClick={this.handleLogoutClick} />
+              <Header handleLogoutClick={this.handleLogoutClick} />
             </Route>
             <Route path='/register'>
               <RegistrationForm />
@@ -128,12 +130,12 @@ export default class App extends Component {
               path='/mashes/:mashId'
             />
             <Route
-              component={(props) => (
+              render={(props) => (
                 <SearchList {...props} mashes={this.state.mashes} />
               )}
               path='/game/:gameName/mashes'
             ></Route>
-            <Route component={Mash} path='/game/:gameName/mashes/:mashId' />
+            <Route render={Mash} path='/game/:gameName/mashes/:mashId' />
           </Switch>
         </div>
       </BrowserRouter>
