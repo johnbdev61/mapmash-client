@@ -2,8 +2,8 @@ import config from '../config'
 import TokenService from './token-service'
 
 const MashApiService = {
-  getMashes(userId) {
-    return fetch(`${config.API_ENDPOINT}/mashes?user_id=${userId}`, {
+  getMashes() {
+    return fetch(`${config.API_ENDPOINT}/mashes`, {
       headers: {
         Authorization: `bearer ${TokenService.getAuthToken()}`,
       },
@@ -28,9 +28,24 @@ const MashApiService = {
       },
     })
   },
-  addVote(mashId) {
-    return fetch(`${config.API_ENDPOINT}/mashes/${mashId}`)
-  }
+  addVote({ isUpvote, mashId, userId }) {
+    return fetch(`${config.API_ENDPOINT}/votes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify({
+        is_upvote: isUpvote,
+        mashes_id: mashId,
+        users_id: TokenService.getUserId(),
+      }),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log('ALL BINDS', result)
+      })
+  },
 }
 
 export default MashApiService

@@ -17,8 +17,9 @@ export default class Mash extends React.Component {
     )
   }
   handleLikeClick = () => {
+    MashApiService.addVote({ isUpvote: true, mashId: this.props.match.params.mashId })
   }
-  
+
   render() {
     console.log('MASH', this.state.mash)
     return (

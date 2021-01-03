@@ -23,11 +23,7 @@ export default class App extends Component {
     console.log('app re-mounting')
     console.log(process.env)
     const userId = TokenService.getUserId()
-    if (userId) {
-      MashApiService.getMashes(userId).then((data) =>
-        this.setState({ mashes: data })
-      )
-    }
+    MashApiService.getMashes().then((data) => this.setState({ mashes: data }))
     this.setState({ isLoggedIn: !!userId })
   }
   handleLogoutClick = () => {
@@ -119,14 +115,20 @@ export default class App extends Component {
             <Route
               path='/home'
               render={(props) => (
-                <HomePage {...props} mashes={this.state.mashes} />
+                <HomePage
+                  {...props}
+                  mashes={this.state.mashes}
+                  userId={TokenService.getUserId()}
+                />
               )}
             />
             <Route path='/mash-form'>
               <MashForm onSubmit={this.handleCreateMash} />
             </Route>
             <Route
-              render={(props) => <Mash {...props} isUserMash={true} />}
+              render={(props) => (
+                <Mash {...props} isUserMash={this.state.isLoggedIn} />
+              )}
               path='/mashes/:mashId'
             />
             <Route
