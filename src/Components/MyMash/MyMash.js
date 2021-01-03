@@ -17,16 +17,19 @@ export default class Mash extends React.Component {
     )
   }
   handleLikeClick = () => {
-    MashApiService.addVote({ isUpvote: true, mashId: this.props.match.params.mashId })
+    MashApiService.addVote({
+      isUpvote: true,
+      mashId: Number(this.props.match.params.mashId),
+    })
   }
 
   render() {
-    console.log('MASH', this.state.mash)
+    console.log('USER ID', this.state.mash.author_id)
     return (
       <>
         <section>
           <h2>{this.state.mash.game_title}</h2>
-          {this.props.isUserMash ? (
+          {this.props.userId === this.state.mash.author_id ? (
             <section className='Delete'>
               <button onClick={this.handleDeleteClick}>Delete</button>
             </section>

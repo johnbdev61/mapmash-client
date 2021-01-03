@@ -127,7 +127,7 @@ export default class App extends Component {
             </Route>
             <Route
               render={(props) => (
-                <Mash {...props} isUserMash={this.state.isLoggedIn} />
+                <Mash {...props} userId={TokenService.getUserId()} />
               )}
               path='/mashes/:mashId'
             />

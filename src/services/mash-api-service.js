@@ -28,7 +28,7 @@ const MashApiService = {
       },
     })
   },
-  addVote({ isUpvote, mashId, userId }) {
+  addVote({ isUpvote, mashId }) {
     return fetch(`${config.API_ENDPOINT}/votes`, {
       method: 'POST',
       headers: {
