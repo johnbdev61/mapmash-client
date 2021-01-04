@@ -1,1 +1,10 @@
+.list-bar {
+  background-color: indigo;
+  font-family: 'Jura', sans-serif;
+  color: white;
+  text-align: center;
+}
 
+.user-mash-list {
+  background-color: lightblue;
+}

@@ -7,8 +7,12 @@ import './Header.css'
 export default class Header extends Component {
   renderLogoutLink() {
     return (
-      <div className='Header__logged-in'>
-        <Link onClick={this.props.handleLogoutClick} to='/'>
+      <div className='header-logged-in'>
+        <Link
+          className='login-logout'
+          onClick={this.props.handleLogoutClick}
+          to='/'
+        >
           Logout
         </Link>
       </div>
@@ -17,10 +21,14 @@ export default class Header extends Component {
 
   renderLoginLink() {
     return (
-      <div className='Header__not-logged-in'>
-        <Link to='/register'>Register</Link>
+      <div className='header-logged-in'>
+        <Link className='login-logout' to='/register'>
+          Register
+        </Link>
         <Hyph />
-        <Link to='/login'>Log in</Link>
+        <Link className='login-logout' to='/login'>
+          Log in
+        </Link>
       </div>
     )
   }
@@ -28,8 +36,8 @@ export default class Header extends Component {
   render() {
     return (
       <section className='Header'>
-        <h1>Welcome to Map Mash</h1>
-        <p>
+        <h1 className='welcome'>Welcome to Map Mash</h1>
+        <p className='description'>
           This application is for gamers who want to show off their perfect
           button layouts (Mashes) for any game on Xbox. Map Mash is also the
           perfect fit for gamers who just want to explore other Mashes and learn

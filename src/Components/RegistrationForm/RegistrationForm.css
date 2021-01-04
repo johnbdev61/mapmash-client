@@ -1,3 +1,17 @@
-.RegistrationForm {
+.registration-form,
+.register {
   text-align: center;
+}
+
+.register {
+  font-family: 'jura', sans-serif;
+}
+
+.registration-form {
+  font-family: 'Spinnaker', sans-serif;
+}
+
+.user-pass-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

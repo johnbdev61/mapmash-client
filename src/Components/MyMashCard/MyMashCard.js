@@ -9,12 +9,16 @@ export default function MashCard(props) {
   return (
     <>
       <section className='mash-card mash-card:hover'>
-        <h3>
-          <Link to={`/mashes/${props.mashId}`}>{props.game_title}</Link>
+        <h3 className='mash-link'>
+          <Link className='mash-link' to={`/mashes/${props.mashId}`}>
+            {props.game_title}
+          </Link>
         </h3>
-        <p>Votes: {props.votes}</p>
+        <p className='votes-username-date'>Votes: {props.votes}</p>
         {props.author_id}
-        <p>Date Created: {props.date_modified}</p>
+        <p className='votes-username-date'>
+          Date Created: {props.date_modified}
+        </p>
       </section>
     </>
   )

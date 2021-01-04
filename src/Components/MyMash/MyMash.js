@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Bind from '../Bind/Bind'
 import MashApiService from '../../services/mash-api-service'
+import './MyMash.css'
 
 export default class Mash extends React.Component {
   state = { mash: {} }
@@ -25,11 +26,11 @@ export default class Mash extends React.Component {
   }
 
   render() {
-    console.log('USER ID', this.state.mash.author_id)
+    // console.log('USER ID', this.state.mash.author_id)
     return (
       <>
-        <section>
-          <h2>{this.state.mash.game_title}</h2>
+        <section className='mash'>
+          <h2 className='game-title'>{this.state.mash.game_title}</h2>
           {this.props.userId === this.state.mash.author_id ? (
             <section className='Delete'>
               <button onClick={this.handleDeleteClick}>Delete</button>
@@ -39,11 +40,16 @@ export default class Mash extends React.Component {
               <button onClick={this.handleLikeClick}>Like Mash</button>
             </section>
           )}
-          <p>Date Created: {this.state.mash.date_modified}</p>
+          <p className='date-created'>
+            Date Created: {this.state.mash.date_modified}
+          </p>
           <Bind binds={this.state.mash.binds} />
-          <h3>Notes</h3>
-          <p>{this.state.mash.notes}</p>
-          <Link to='/home'>Go Back</Link>
+          <h3 className='notes-header'>Notes</h3>
+          <p className='user-notes'>{this.state.mash.notes}</p>
+          <hr/>
+          <Link className='go-back' to='/home'>
+            <p>Go Back</p>
+          </Link>
         </section>
       </>
     )

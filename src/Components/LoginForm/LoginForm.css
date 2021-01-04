@@ -1,12 +1,22 @@
-.LoginForm {
+.login-form,
+.login {
   text-align: center;
 }
 
-input {
-  margin-left: 5px;
-  margin-bottom: 20px;
+.login {
+  font-family: 'jura', sans-serif;
 }
 
-label {
+.login-form {
   font-family: 'Spinnaker', sans-serif;
+}
+
+.username,
+.password {
+  margin-right: 5px;
+}
+
+.name-pass-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

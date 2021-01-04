@@ -1,1 +1,24 @@
+.nav-bar,
+.header {
+  background-color: lightblue;
+  font-family: 'jura', sans-serif;
+  text-align: center;
+}
 
+.search {
+  text-decoration: none;
+  font-family: 'Spinnaker', sans-serif;
+}
+
+.create-mash,
+.search,
+.log-out-home {
+  text-align: center;
+  margin: 0;
+}
+
+.home-link,
+.create-link,
+.logout-link {
+  text-decoration: none;
+}

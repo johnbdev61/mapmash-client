@@ -40,14 +40,15 @@ export default class RegistrationForm extends Component {
     const { error } = this.state
     return (
       <>
-        <h1>Register to Use Map Mash</h1>
-        <form className='RegistrationForm' onSubmit={this.handleSubmit}>
+        <h1 className='register'>Register to Use Map Mash</h1>
+        <form className='registration-form' onSubmit={this.handleSubmit}>
           <div role='alert'>{error && <p className='red'>{error}</p>}</div>
           <div className='username'>
             <label htmlFor='RegistrationForm__username'>
               Username <Required />
             </label>
             <Input
+              className='user-pass-btn'
               name='username'
               type='text'
               required
@@ -59,13 +60,16 @@ export default class RegistrationForm extends Component {
               Password <Required />
             </label>
             <Input
+              className='user-pass-btn'
               name='password'
               type='password'
               required
               id='RegistrationForm__password'
             ></Input>
           </div>
-          <Button type='submit'>Register</Button>
+          <Button className='user-pass-btn' type='submit'>
+            Register
+          </Button>
         </form>
       </>
     )

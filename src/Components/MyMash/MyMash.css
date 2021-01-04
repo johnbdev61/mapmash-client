@@ -1,0 +1,14 @@
+.game-title,
+.notes-header {
+  text-align: center;
+  font-family: 'jura', sans-serif;
+  color: white;
+  background-color: indigo;
+}
+
+.user-notes,
+.date-created,
+.go-back {
+  font-family: 'Spinnaker', sans-serif;
+  text-decoration: none;
+}

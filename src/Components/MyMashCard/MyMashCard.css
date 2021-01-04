@@ -1,16 +1,17 @@
-h2 {
+.mash-link {
   font-family: 'Jura', sans-serif;
-  text-align: center;
-}
-
-h3 {
-  font-family: 'Jura', sans-serif;
+  text-decoration: none;
 }
 
 .mash-card {
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+  background-color: white;
+}
+
+.votes-username-date {
+  font-family: 'Spinnaker', sans-serif;
 }
 
 .mash-card:hover {

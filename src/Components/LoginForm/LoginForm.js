@@ -42,23 +42,35 @@ export default class LoginForm extends React.Component {
     const { error } = this.state
     return (
       <>
-        <h1>Login to Map Mash</h1>
-        <form className='LoginForm' onSubmit={this.handleSubmitJwtAuth}>
+        <h1 className='login'>Login to Map Mash</h1>
+        <form className='login-form' onSubmit={this.handleSubmitJwtAuth}>
           <div role='alert'>{error && <p className='red'>{error}</p>}</div>
           <div className='username'>
-            <label htmlFor='LoginForm__username'>Username</label>
-            <Input required name='username' id='LoginForm__username'></Input>
+            <label className='username' htmlFor='LoginForm__username'>
+              Username
+            </label>
+            <Input
+              className='name-pass-btn'
+              required
+              name='username'
+              id='LoginForm__username'
+            ></Input>
           </div>
           <div className='password'>
-            <label htmlFor='LoginForm__password'>Password</label>
+            <label className='password' htmlFor='LoginForm__password'>
+              Password
+            </label>
             <Input
+              className='name-pass-btn'
               required
               name='password'
               type='password'
               id='LoginForm__password'
             ></Input>
           </div>
-          <Button type='submit'>Login</Button>
+          <Button className='name-pass-btn' type='submit'>
+            Login
+          </Button>
         </form>
       </>
     )

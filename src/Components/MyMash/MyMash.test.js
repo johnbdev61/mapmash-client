@@ -5,6 +5,7 @@ import MyMash from './MyMash'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
+
   ReactDOM.render(
     <BrowserRouter>
       <MyMash />

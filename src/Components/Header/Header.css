@@ -1,13 +1,19 @@
-h1 {
-  font-family: 'Jura', sans-serif;
+header,
+.welcome {
   text-align: center;
+  font-family: 'jura', sans-serif;
 }
 
-p,
-a {
+.header-logged-in {
+  text-align: center;
+  
+}
+
+.login-logout {
   font-family: 'Spinnaker', sans-serif;
+  text-decoration: none;
 }
 
-.Header__not-logged-in {
-  text-align: center;
+.description {
+  font-family: 'Spinnaker', sans-serif;
 }
