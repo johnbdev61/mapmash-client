@@ -16,7 +16,7 @@ export default class HomePage extends React.Component {
                   key={mash.id}
                   mashId={mash.id}
                   game_title={mash.game_title}
-                  auth_id={mash.auth_id}
+                  author_id={mash.author_id}
                   votes={mash.votes}
                   date_modified={mash.date_modified}
                 />

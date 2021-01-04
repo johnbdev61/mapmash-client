@@ -20,6 +20,15 @@ const MashApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     )
   },
+  getUsers() {
+    return fetch(`${config.API_ENDPOINT}/users`, {
+      headers: {
+        Authorization: `bearer ${TokenService.getAuthToken()}`,
+      },
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    )
+  },
   deleteMash(mashId) {
     return fetch(`${config.API_ENDPOINT}/mashes/${mashId}`, {
       method: 'DELETE',

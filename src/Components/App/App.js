@@ -54,7 +54,7 @@ export default class App extends Component {
     const newMash = {
       game_title: event.target.game_title.value,
       notes: event.target.notes.value,
-      date_modified: new Date().toISOString().substring(0, 10),
+      date_modified: new Date().toISOString(),
     }
     fetch(`${config.API_ENDPOINT}/mashes`, {
       method: 'POST',
