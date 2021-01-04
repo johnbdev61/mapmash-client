@@ -1,0 +1,10 @@
+.search-title {
+  font-family: 'jura', sans-serif;
+  text-align: center;
+  color: white;
+  background-color: indigo;
+}
+
+.search-list {
+  background-color: lightblue;
+}
