@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Hyph } from '../Utils/Utils'
+import { Hyph } from '../../Utils/Utils'
 import TokenService from '../../services/token-service'
 import './Header.css'
 

@@ -12,9 +12,10 @@ export default class Mash extends React.Component {
     )
   }
   handleDeleteClick = () => {
-    MashApiService.deleteMash(this.props.match.params.mashId).then(() =>
+    MashApiService.deleteMash(this.props.match.params.mashId).then(() => {
+      this.props.onDelete(Number(this.props.match.params.mashId))
       this.props.history.push('/home')
-    )
+    })
   }
   handleLikeClick = () => {
     MashApiService.addVote({

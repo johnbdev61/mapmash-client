@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
-import { Button, Input } from '../Utils/Utils'
+import { Button, Input } from '../../Utils/Utils'
 import './LoginForm.css'
 
 export default class LoginForm extends React.Component {

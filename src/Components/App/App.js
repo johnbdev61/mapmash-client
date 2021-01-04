@@ -42,6 +42,12 @@ export default class App extends Component {
   handleLoginStatus = (isLoggedIn) => {
     this.setState({ isLoggedIn })
   }
+  handleDeletedMash = (mashId) => {
+    const updatedMashes = this.state.mashes.filter((mash) => {
+      return mash.id !== mashId
+    })
+    this.setState({ mashes: updatedMashes })
+  }
   handleCreateMash = (event) => {
     event.preventDefault()
     console.log(event)
@@ -127,7 +133,11 @@ export default class App extends Component {
             </Route>
             <Route
               render={(props) => (
-                <Mash {...props} userId={TokenService.getUserId()} />
+                <Mash
+                  onDelete={this.handleDeletedMash}
+                  {...props}
+                  userId={TokenService.getUserId()}
+                />
               )}
               path='/mashes/:mashId'
             />
