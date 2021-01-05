@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import ApiContext from '../../ApiContext'
 import './MashForm.css'
 
 class MashForm extends React.Component {
@@ -8,7 +7,6 @@ class MashForm extends React.Component {
     onCreateMash: () => {},
     onCreateBind: () => [],
   }
-  static contextType = ApiContext
 
   render() {
     return (
@@ -29,97 +27,97 @@ class MashForm extends React.Component {
             <div className='input-wrapper'>
               <label for='a-button'>A Button</label>
               <br />
-              <input type='text' name='a_button' id='a-button' />
+              <input type='text' name='A Button' id='a-button' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='b-button'>B Button</label>
               <br />
-              <input type='text' name='b_button' id='b-button' />
+              <input type='text' name='B Button' id='b-button' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='x-button'>X Button</label>
               <br />
-              <input type='text' name='x_button' id='x-button' />
+              <input type='text' name='X Button' id='x-button' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='y-button'>Y Button</label>
               <br />
-              <input type='text' name='y_button' id='y-button' />
+              <input type='text' name='Y Button' id='y-button' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='right-bumper'>Right Bumper</label>
               <br />
-              <input type='text' name='right_bumper' id='right-bumper' />
+              <input type='text' name='Right Bumper' id='right-bumper' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='left-bumper'>Left Bumper</label>
               <br />
-              <input type='text' name='left_bumper' id='left-bumper' />
+              <input type='text' name='Left Bumper' id='left-bumper' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='right-trigger'>Right Trigger</label>
               <br />
-              <input type='text' name='right_trigger' id='right-trigger' />
+              <input type='text' name='Right Trigger' id='right-trigger' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='left-trigger'>Left Trigger</label>
               <br />
-              <input type='text' name='left_trigger' id='left-trigger' />
+              <input type='text' name='Left Trigger' id='left-trigger' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='left-stick'>Left Stick</label>
               <br />
-              <input type='text' name='left_stick' id='left-stick' />
+              <input type='text' name='Left Stick' id='left-stick' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='left-click'>Left Stick Click</label>
               <br />
-              <input type='text' name='left_click' id='left-click' />
+              <input type='text' name='Left Click' id='left-click' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='right-stick'>Right Stick</label>
               <br />
-              <input type='text' name='right_stick' id='right-stick' />
+              <input type='text' name='Right Stick' id='right-stick' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='right-click'>Right Stick Click</label>
               <br />
-              <input type='text' name='right_click' id='right-click' />
+              <input type='text' name='Right Click' id='right-click' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='dpad-up'>D-Pad Up</label>
               <br />
-              <input type='text' name='dpad_up' id='dpad-up' />
+              <input type='text' name='D-Pad Up' id='dpad-up' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='dpad-right'>D-Pad Right</label>
               <br />
-              <input type='text' name='dpad_right' id='dpad-right' />
+              <input type='text' name='D-Pad Right' id='dpad-right' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='dpad-down'>D-Pad Down</label>
               <br />
-              <input type='text' name='dpad_down' id='dpad-down' />
+              <input type='text' name='D-Pad Down' id='dpad-down' />
             </div>
             <br />
             <div className='input-wrapper'>
               <label for='dpad-left'>D-Pad Left</label>
               <br />
-              <input type='text' name='dpad_left' id='dpad-left' />
+              <input type='text' name='D-Pad Left' id='dpad-left' />
             </div>
             <br />
             <div className='input-wrapper'>

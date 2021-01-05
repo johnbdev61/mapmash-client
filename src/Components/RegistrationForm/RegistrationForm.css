@@ -5,6 +5,10 @@
 
 .register {
   font-family: 'jura', sans-serif;
+  color: white;
+  background-color: indigo;
+  margin: 0;
+  padding: 20px;
 }
 
 .registration-form {

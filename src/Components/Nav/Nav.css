@@ -1,12 +1,17 @@
-.nav-bar,
-.header {
+.nav-bar {
   background-color: lightblue;
   font-family: 'jura', sans-serif;
   text-align: center;
 }
 
+.site-logo {
+  margin: 0;
+  padding: 15px;
+}
+
 .nav-bar {
-  padding-bottom: 20px;
+  margin: 0;
+  padding: 20px;
 }
 
 .search {

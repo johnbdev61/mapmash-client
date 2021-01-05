@@ -35,7 +35,7 @@ export default class Header extends Component {
 
   render() {
     return (
-      <section className='Header'>
+      <section className='header'>
         <h1 className='welcome'>Welcome to Map Mash</h1>
         <p className='description'>
           This application is for gamers who want to show off their perfect

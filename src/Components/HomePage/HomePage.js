@@ -1,11 +1,17 @@
 import React from 'react'
 import MyMashCard from '../MyMashCard/MyMashCard'
 import './HomePage.css'
+import MashApiService from '../../services/mash-api-service'
 
 export default class HomePage extends React.Component {
   static defaultProps = {
-    mashes: []
+    mashes: [],
   }
+
+  componentDidMount() {
+    MashApiService.getMashes().then((data) => this.props.setMashes(data))
+  }
+
   render() {
     return (
       <>

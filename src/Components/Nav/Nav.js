@@ -8,7 +8,7 @@ export default class Nav extends Component {
       <>
         <section className='nav-bar'>
           <Link className='home-link' to='/home'>
-            <h1 className='header'>Map Mash</h1>
+            <h1 className='site-logo'>Map Mash</h1>
           </Link>
           <Link className='create-link' to='/mash-form'>
             <p className='create-mash'>Create New Mash</p>

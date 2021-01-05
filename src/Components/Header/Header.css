@@ -1,16 +1,7 @@
-header,
 .welcome {
-  text-align: center;
   font-family: 'jura', sans-serif;
   color: white;
-}
-
-.header {
-  margin: 0;
-  padding: 20px;
-}
-
-.welcome {
+  text-align: center;
   background-color: indigo;
   margin: 0;
   padding: 20px;

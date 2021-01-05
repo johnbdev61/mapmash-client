@@ -10,7 +10,6 @@ import config from '../../config'
 import SearchList from '../SearchList/SearchList'
 import RegistrationForm from '../RegistrationForm/RegistrationForm'
 import TokenService from '../../services/token-service'
-import MashApiService from '../../services/mash-api-service'
 
 export default class App extends Component {
   state = {
@@ -23,7 +22,6 @@ export default class App extends Component {
     console.log('app re-mounting')
     console.log(process.env)
     const userId = TokenService.getUserId()
-    MashApiService.getMashes().then((data) => this.setState({ mashes: data }))
     this.setState({ isLoggedIn: !!userId })
   }
   handleLogoutClick = () => {
@@ -47,6 +45,9 @@ export default class App extends Component {
       return mash.id !== mashId
     })
     this.setState({ mashes: updatedMashes })
+  }
+  setMashes = (mashes) => {
+    this.setState({ mashes })
   }
   handleCreateMash = (event) => {
     event.preventDefault()
@@ -123,6 +124,7 @@ export default class App extends Component {
               render={(props) => (
                 <HomePage
                   {...props}
+                  setMashes={this.setMashes}
                   mashes={this.state.mashes}
                   userId={TokenService.getUserId()}
                 />
@@ -143,7 +145,11 @@ export default class App extends Component {
             />
             <Route
               render={(props) => (
-                <SearchList {...props} mashes={this.state.mashes} />
+                <SearchList
+                  {...props}
+                  setMashes={this.setMashes}
+                  mashes={this.state.mashes}
+                />
               )}
               path='/game/:gameName/mashes'
             ></Route>
