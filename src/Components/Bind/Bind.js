@@ -21,7 +21,7 @@ export default class Bind extends Component {
   render() {
     return (
       <div>
-        <table>
+        <table className='table-center'>
           <tbody>
             <tr>
               <th>Controller Button</th>

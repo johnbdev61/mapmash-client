@@ -13,7 +13,7 @@ export default class Header extends Component {
           onClick={this.props.handleLogoutClick}
           to='/'
         >
-          Logout
+          Log Out
         </Link>
       </div>
     )

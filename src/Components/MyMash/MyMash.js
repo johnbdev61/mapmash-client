@@ -52,7 +52,12 @@ export default class Mash extends React.Component {
           <h3 className='notes-header'>Notes</h3>
           <p className='user-notes'>{this.state.mash.notes}</p>
           <hr />
-          <Link className='go-back' to='/home'>
+          <Link className='go-back'
+            to=''
+            onClick={e => {
+              e.preventDefault()
+              this.props.history.goBack()
+            }}>
             <p>Go Back</p>
           </Link>
         </section>
