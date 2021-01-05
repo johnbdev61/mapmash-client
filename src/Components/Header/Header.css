@@ -4,9 +4,13 @@ header,
   font-family: 'jura', sans-serif;
 }
 
+.header {
+  margin: 0;
+  padding: 20px;
+}
+
 .header-logged-in {
   text-align: center;
-  
 }
 
 .login-logout {

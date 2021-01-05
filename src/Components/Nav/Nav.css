@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.nav-bar {
+  padding-bottom: 20px;
+}
+
 .search {
   text-decoration: none;
   font-family: 'Spinnaker', sans-serif;

@@ -3,6 +3,9 @@ import MyMashCard from '../MyMashCard/MyMashCard'
 import './HomePage.css'
 
 export default class HomePage extends React.Component {
+  static defaultProps = {
+    mashes: []
+  }
   render() {
     return (
       <>

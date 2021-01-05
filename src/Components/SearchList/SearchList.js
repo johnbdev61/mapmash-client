@@ -11,7 +11,9 @@ export default function SearchList(props) {
   return (
     <>
       <section className='search-list'>
-        <h2 className='search-title'>Mash List for {props.match.params.gameName}</h2>
+        <h2 className='search-title'>
+          Mash List for {props.match.params.gameName}
+        </h2>
         <span className='results'>
           {mashByGame.map((mash) => (
             <MyMashCard key={mash.id} {...mash} mashId={mash.id} />
@@ -20,4 +22,9 @@ export default function SearchList(props) {
       </section>
     </>
   )
+}
+
+SearchList.defaultProps = {
+  mashes: [],
+  match: { params: [] },
 }

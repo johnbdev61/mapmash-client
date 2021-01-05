@@ -6,6 +6,11 @@ import './MyMash.css'
 
 export default class Mash extends React.Component {
   state = { mash: {} }
+  static defaultProps = {
+    match: { 
+      params: {}
+    }
+  }
   componentDidMount() {
     console.log('MASH ID', this.props.match.params.mashId)
     MashApiService.getMash(this.props.match.params.mashId).then((mash) =>
@@ -46,7 +51,7 @@ export default class Mash extends React.Component {
           <Bind binds={this.state.mash.binds} />
           <h3 className='notes-header'>Notes</h3>
           <p className='user-notes'>{this.state.mash.notes}</p>
-          <hr/>
+          <hr />
           <Link className='go-back' to='/home'>
             <p>Go Back</p>
           </Link>
