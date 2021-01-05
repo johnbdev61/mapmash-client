@@ -44,7 +44,7 @@ export default class Header extends Component {
           what the best configurations are for the games they want to break
           into.
           <br />
-          You may create new mashes for your favortie games, or you can search
+          You may create new mashes for your favorite games, or you can search
           by game title for other user's Mashes. Log in or create an account to
           get started.
         </p>

@@ -6,9 +6,24 @@
   background-color: indigo;
 }
 
+.game-title {
+  margin: 0;
+  padding: 10px;
+}
+
+.delete {
+  padding: 10px;
+}
+
+.notes-header {
+  padding: 5px;
+}
+
 .user-notes,
 .date-created,
 .go-back {
   font-family: 'Spinnaker', sans-serif;
   text-decoration: none;
 }
+
+

@@ -1,0 +1,35 @@
+.new-mash {
+  font-family: 'jura', sans-serif;
+  color: white;
+  background-color: indigo;
+  margin: 0;
+  padding: 10px;
+}
+
+.game-label {
+  margin-top: 20px;
+}
+
+.mash-inputs,
+.cancel-link {
+  font-family: 'spinnaker', sans-serif;
+  text-decoration: none;
+}
+
+.submit-btn {
+  margin-left: 5px;
+}
+
+.cancel-link {
+  padding: 20px;
+}
+
+.mash-form {
+  text-align: center;
+}
+
+.input-wrapper {
+  display: inline-block;
+  text-align: left;
+  padding: 5px;
+}

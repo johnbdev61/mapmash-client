@@ -37,11 +37,11 @@ export default class Mash extends React.Component {
         <section className='mash'>
           <h2 className='game-title'>{this.state.mash.game_title}</h2>
           {this.props.userId === this.state.mash.author_id ? (
-            <section className='Delete'>
+            <section className='delete'>
               <button onClick={this.handleDeleteClick}>Delete</button>
             </section>
           ) : (
-            <section className='Delete'>
+            <section className='delete'>
               <button onClick={this.handleLikeClick}>Like Mash</button>
             </section>
           )}

@@ -10,7 +10,7 @@ export default class HomePage extends React.Component {
     return (
       <>
         <section className='user-mash-list'>
-          <h2 className='list-bar'>User Mash List</h2>
+          <h2 className='list-bar'>My Mashes</h2>
           <div className='mash-card mash-card:hover'>
             {this.props.mashes
               .filter((mash) => mash.author_id === this.props.userId)
