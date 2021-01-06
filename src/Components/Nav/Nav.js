@@ -14,31 +14,24 @@ export default class Nav extends Component {
             <p className='create-mash'>Create New Mash</p>
           </Link>
           <br />
-          <div className='search'>            
+          <form className='search' action=''>
             <label className='search-label' htmlFor='LoginForm__username'>
               Search Community Mashes
             </label>
             <input
+              aria-label='Enter Game Title'
               type='text'
               placeholder='Enter Game Title'
               onChange={this.props.handleInputChange}
             />
-            <button className='search-game' onClick={this.props.handleSubmit}>
+            <button
+              aria-label='Search'
+              className='search-game'
+              onClick={this.props.handleSubmit}
+            >
               Search
             </button>
-          </div>
-          {/* <form onSubmit={this.props.handleInputChange}>
-            <label className='search-label' htmlFor='LoginForm__username'>
-              Search Community Mashes
-            </label>
-            <input
-              className='game-search'
-              name='submit'
-              type='submit'
-              placeholder='Enter Game Title'
-            />
-            <button>Search</button>
-          </form> */}
+          </form>
           <br />
           <Link
             className='logout-link'
