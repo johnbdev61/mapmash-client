@@ -14,7 +14,10 @@ export default class Nav extends Component {
             <p className='create-mash'>Create New Mash</p>
           </Link>
           <br />
-          <div className='search'>
+          <div className='search'>            
+            <label className='search-label' htmlFor='LoginForm__username'>
+              Search Community Mashes
+            </label>
             <input
               type='text'
               placeholder='Enter Game Title'
@@ -24,8 +27,24 @@ export default class Nav extends Component {
               Search
             </button>
           </div>
+          {/* <form onSubmit={this.props.handleInputChange}>
+            <label className='search-label' htmlFor='LoginForm__username'>
+              Search Community Mashes
+            </label>
+            <input
+              className='game-search'
+              name='submit'
+              type='submit'
+              placeholder='Enter Game Title'
+            />
+            <button>Search</button>
+          </form> */}
           <br />
-          <Link className='logout-link' onClick={this.props.handleLogoutClick} to='/'>
+          <Link
+            className='logout-link'
+            onClick={this.props.handleLogoutClick}
+            to='/'
+          >
             <p className='log-out-home'>Log Out</p>
           </Link>
         </section>

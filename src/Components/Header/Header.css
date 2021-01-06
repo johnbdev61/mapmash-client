@@ -1,5 +1,6 @@
 .welcome {
   font-family: 'jura', sans-serif;
+  font-size: 40px;
   color: white;
   text-align: center;
   background-color: indigo;
@@ -18,4 +19,11 @@
 
 .description {
   font-family: 'Spinnaker', sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.instructions-header {
+  font-family: 'jura', sans-serif;
+  text-align: center;
 }

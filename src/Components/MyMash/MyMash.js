@@ -58,7 +58,7 @@ export default class Mash extends React.Component {
               e.preventDefault()
               this.props.history.goBack()
             }}>
-            <p>Go Back</p>
+            <p className='back-text'>Go Back</p>
           </Link>
         </section>
       </>

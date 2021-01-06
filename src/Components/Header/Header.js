@@ -43,11 +43,16 @@ export default class Header extends Component {
           perfect fit for gamers who just want to explore other Mashes and learn
           what the best configurations are for the games they want to break
           into.
-          <br />
+        </p>  
+        <p className='description'>            
           You may create new mashes for your favorite games, or you can search
           by game title for other user's Mashes. Log in or create an account to
           get started.
         </p>
+        <h3 className='instructions-header'>Demo User Instructions</h3>
+        <p className='demo-user description'>Demo Username: kind-grader</p>
+        <p className='demo-user description'>Demo Password: &Passkey123</p>
+        <p className='description'>There are 4 users including the demo user. Each user has a mash for the game Halo 3. You will see that mash on your homepage and you will see all four mashes when you search the title Halo 3</p>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

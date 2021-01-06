@@ -18,7 +18,7 @@ export default class SearchList extends React.Component {
       <>
         <section className='search-list'>
           <h2 className='search-title'>
-            Mash List for {this.props.match.params.gameName}
+            Mash Search List for {this.props.match.params.gameName}
           </h2>
           <span className='results'>
             {mashByGame.map((mash) => (

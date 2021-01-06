@@ -48,6 +48,7 @@ export default class RegistrationForm extends Component {
               Username <Required />
             </label>
             <Input
+              aria-label='Username'
               className='user-pass-btn'
               name='username'
               type='text'
@@ -60,6 +61,7 @@ export default class RegistrationForm extends Component {
               Password <Required />
             </label>
             <Input
+              aria-label='Password'
               className='user-pass-btn'
               name='password'
               type='password'
@@ -67,7 +69,7 @@ export default class RegistrationForm extends Component {
               id='RegistrationForm__password'
             ></Input>
           </div>
-          <Button className='user-pass-btn' type='submit'>
+          <Button aria-label='Register' className='user-pass-btn' type='submit'>
             Register
           </Button>
         </form>

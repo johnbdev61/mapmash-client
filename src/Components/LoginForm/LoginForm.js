@@ -50,6 +50,7 @@ export default class LoginForm extends React.Component {
               Username
             </label>
             <Input
+              aria-label='Username'
               className='name-pass-btn'
               required
               name='username'
@@ -61,6 +62,7 @@ export default class LoginForm extends React.Component {
               Password
             </label>
             <Input
+              aria-label='Username'
               className='name-pass-btn'
               required
               name='password'
@@ -68,7 +70,7 @@ export default class LoginForm extends React.Component {
               id='LoginForm__password'
             ></Input>
           </div>
-          <Button className='name-pass-btn' type='submit'>
+          <Button aria-label='Login' className='name-pass-btn' type='submit'>
             Login
           </Button>
         </form>

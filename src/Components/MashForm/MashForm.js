@@ -19,111 +19,192 @@ class MashForm extends React.Component {
             onSubmit={(e) => this.props.onSubmit(e)}
           >
             <div className='input-wrapper game-label'>
-              <label for='enter-game'>Game</label>
+              <label htmlFor='enter-game'>Game</label>
               <br />
-              <input type='text' name='game_title' />
+              <input aria-label='Game Title' type='text' name='game_title' />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='a-button'>A Button</label>
+              <label htmlFor='a-button'>A Button</label>
               <br />
-              <input type='text' name='A Button' id='a-button' />
+              <input
+                aria-label='A Button'
+                type='text'
+                name='A Button'
+                id='a-button'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='b-button'>B Button</label>
+              <label htmlFor='b-button'>B Button</label>
               <br />
-              <input type='text' name='B Button' id='b-button' />
+              <input
+                aria-label='B Button'
+                type='text'
+                name='B Button'
+                id='b-button'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='x-button'>X Button</label>
+              <label htmlFor='x-button'>X Button</label>
               <br />
-              <input type='text' name='X Button' id='x-button' />
+              <input
+                aria-label='X Button'
+                type='text'
+                name='X Button'
+                id='x-button'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='y-button'>Y Button</label>
+              <label htmlFor='y-button'>Y Button</label>
               <br />
-              <input type='text' name='Y Button' id='y-button' />
+              <input
+                aria-label='Y Button'
+                type='text'
+                name='Y Button'
+                id='y-button'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='right-bumper'>Right Bumper</label>
+              <label htmlFor='right-bumper'>Right Bumper</label>
               <br />
-              <input type='text' name='Right Bumper' id='right-bumper' />
+              <input
+                aria-label='Right Bumper'
+                type='text'
+                name='Right Bumper'
+                id='right-bumper'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='left-bumper'>Left Bumper</label>
+              <label htmlFor='left-bumper'>Left Bumper</label>
               <br />
-              <input type='text' name='Left Bumper' id='left-bumper' />
+              <input
+                aria-label='Left Bumper'
+                type='text'
+                name='Left Bumper'
+                id='left-bumper'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='right-trigger'>Right Trigger</label>
+              <label htmlFor='right-trigger'>Right Trigger</label>
               <br />
-              <input type='text' name='Right Trigger' id='right-trigger' />
+              <input
+                aria-label='Right Trigger'
+                type='text'
+                name='Right Trigger'
+                id='right-trigger'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='left-trigger'>Left Trigger</label>
+              <label htmlFor='left-trigger'>Left Trigger</label>
               <br />
-              <input type='text' name='Left Trigger' id='left-trigger' />
+              <input
+                aria-label='Left Trigger'
+                type='text'
+                name='Left Trigger'
+                id='left-trigger'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='left-stick'>Left Stick</label>
+              <label htmlFor='left-stick'>Left Stick</label>
               <br />
-              <input type='text' name='Left Stick' id='left-stick' />
+              <input
+                aria-label='Left Stick'
+                type='text'
+                name='Left Stick'
+                id='left-stick'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='left-click'>Left Stick Click</label>
+              <label htmlFor='left-click'>Left Stick Click</label>
               <br />
-              <input type='text' name='Left Click' id='left-click' />
+              <input
+                aria-label='Left Click'
+                type='text'
+                name='Left Click'
+                id='left-click'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='right-stick'>Right Stick</label>
+              <label htmlFor='right-stick'>Right Stick</label>
               <br />
-              <input type='text' name='Right Stick' id='right-stick' />
+              <input
+                aria-label='Right Stick'
+                type='text'
+                name='Right Stick'
+                id='right-stick'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='right-click'>Right Stick Click</label>
+              <label htmlFor='right-click'>Right Stick Click</label>
               <br />
-              <input type='text' name='Right Click' id='right-click' />
+              <input
+                aria-label='Right Click'
+                type='text'
+                name='Right Click'
+                id='right-click'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='dpad-up'>D-Pad Up</label>
+              <label htmlFor='dpad-up'>D-Pad Up</label>
               <br />
-              <input type='text' name='D-Pad Up' id='dpad-up' />
+              <input
+                aria-label='D-Pad Up'
+                type='text'
+                name='D-Pad Up'
+                id='dpad-up'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='dpad-right'>D-Pad Right</label>
+              <label htmlFor='dpad-right'>D-Pad Right</label>
               <br />
-              <input type='text' name='D-Pad Right' id='dpad-right' />
+              <input
+                aria-label='D-Pad Right'
+                type='text'
+                name='D-Pad Right'
+                id='dpad-right'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='dpad-down'>D-Pad Down</label>
+              <label htmlFor='dpad-down'>D-Pad Down</label>
               <br />
-              <input type='text' name='D-Pad Down' id='dpad-down' />
+              <input
+                aria-label='D-Pad Down'
+                type='text'
+                name='D-Pad Down'
+                id='dpad-down'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='dpad-left'>D-Pad Left</label>
+              <label htmlFor='dpad-left'>D-Pad Left</label>
               <br />
-              <input type='text' name='D-Pad Left' id='dpad-left' />
+              <input
+                aria-label='D-Pad Left'
+                type='text'
+                name='D-Pad Left'
+                id='dpad-left'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
-              <label for='note-section'>Notes</label>
+              <label htmlFor='note-section'>Notes</label>
               <br />
               <textarea
+                aria-label='Notes'
                 className='notes'
                 name='notes'
                 id='note-section'
@@ -131,7 +212,7 @@ class MashForm extends React.Component {
                 rows='10'
                 placeholder='Enter notes about your mash'
               ></textarea>
-              <input className='submit-btn' type='submit' />
+              <input aria-label='Submit' className='submit-btn' type='submit' />
             </div>
             <Link to='/home'>
               <button className='back-btn'>Go Back</button>

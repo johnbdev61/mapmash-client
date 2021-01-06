@@ -24,6 +24,9 @@
 .go-back {
   font-family: 'Spinnaker', sans-serif;
   text-decoration: none;
+  margin-left: 5px;
 }
 
-
+.back-text {
+  margin-left: 5px;
+}

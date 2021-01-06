@@ -1,17 +1,15 @@
 .nav-bar {
   background-color: lightblue;
-  font-family: 'jura', sans-serif;
   text-align: center;
 }
 
 .site-logo {
   margin: 0;
   padding: 15px;
-}
-
-.nav-bar {
-  margin: 0;
-  padding: 20px;
+  font-family: 'jura', sans-serif;
+  font-size: 40px;
+  background-color: indigo;
+  color: white;
 }
 
 .search {
@@ -19,11 +17,22 @@
   font-family: 'Spinnaker', sans-serif;
 }
 
+.search-label {
+  padding-right: 5px;
+  color: indigo;
+}
+
 .create-mash,
 .search,
 .log-out-home {
+  font-family: 'Spinnaker', sans-serif;
   text-align: center;
   margin: 0;
+}
+
+.create-mash,
+.log-out-home {
+  padding: 10px;
 }
 
 .home-link,

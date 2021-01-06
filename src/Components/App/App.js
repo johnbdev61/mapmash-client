@@ -92,7 +92,7 @@ export default class App extends Component {
           .then((result) => {
             console.log('ALL BINDS', result)
           })
-        window.location.replace('/home') //TODO: Make this less shitty if you have time
+        window.location.replace('/home')
       })
   }
 
