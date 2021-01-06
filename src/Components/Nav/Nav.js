@@ -14,7 +14,7 @@ export default class Nav extends Component {
             <p className='create-mash'>Create New Mash</p>
           </Link>
           <br />
-          <form className='search' action=''>
+          <div className='search' action=''>
             <label className='search-label' htmlFor='LoginForm__username'>
               Search Community Mashes
             </label>
@@ -27,11 +27,11 @@ export default class Nav extends Component {
             <button
               aria-label='Search'
               className='search-game'
-              onClick={this.props.handleSubmit}
+              onClick={this.props.handleSearchSubmit}
             >
               Search
             </button>
-          </form>
+          </div>
           <br />
           <Link
             className='logout-link'

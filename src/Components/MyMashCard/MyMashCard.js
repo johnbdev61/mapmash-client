@@ -21,8 +21,10 @@ export default function MashCard(props) {
           {props.author_id !== currentUserId ? props.username : 'You'}
         </p>
         <p className='votes-username-date'>Votes: {props.votes}</p>
+        {/* I had issues with date fns and ReactMoment worked much better */}
         <p className='votes-username-date'>
-          Date Created: <ReactMoment format='MM/DD/YYYY'>{dateCreated}</ReactMoment>
+          Date Created:{' '}
+          <ReactMoment format='MM/DD/YYYY'>{dateCreated}</ReactMoment>
         </p>
       </section>
     </>

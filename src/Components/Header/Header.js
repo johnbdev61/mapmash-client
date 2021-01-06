@@ -52,7 +52,7 @@ export default class Header extends Component {
         <h3 className='instructions-header'>Demo User Instructions</h3>
         <p className='demo-user description'>Demo Username: kind-grader</p>
         <p className='demo-user description'>Demo Password: &Passkey123</p>
-        <p className='description'>There are 4 users including the demo user. Each user has a mash for the game Halo 3. You will see that mash on your homepage and you will see all four mashes when you search the title Halo 3</p>
+        <p className='description'>There are 4 users including the demo user. Each user has a mash for the game 'Halo 3'. You will see that mash on your homepage and you will see all four mashes when you search the title 'Halo 3'. Click Create Mash to make a new mash. Only the game title is required for submission.</p>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

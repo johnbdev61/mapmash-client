@@ -33,7 +33,7 @@ export default class App extends Component {
     const { value } = event.target
     this.setState({ gameTitle: value })
   }
-  handleSubmit = () => {
+  handleSearchSubmit = () => {
     const { gameTitle } = this.state
     window.location.replace(`/game/${gameTitle}/mashes`)
   }
@@ -105,7 +105,7 @@ export default class App extends Component {
             <Nav
               handleCreateMash={this.handleCreateMash}
               handleInputChange={this.handleInputChange}
-              handleSubmit={this.handleSubmit}
+              handleSearchSubmit={this.handleSearchSubmit}
               handleLogoutClick={this.handleLogoutClick}
             />
           )}
