@@ -14,7 +14,7 @@ export default class Nav extends Component {
             <p className='create-mash'>Create New Mash</p>
           </Link>
           <br />
-          <div className='search' action=''>
+          <form className='search' action=''>
             <label className='search-label' htmlFor='LoginForm__username'>
               Search Community Mashes
             </label>
@@ -31,7 +31,7 @@ export default class Nav extends Component {
             >
               Search
             </button>
-          </div>
+          </form>
           <br />
           <Link
             className='logout-link'

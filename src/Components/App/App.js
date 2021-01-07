@@ -33,7 +33,8 @@ export default class App extends Component {
     const { value } = event.target
     this.setState({ gameTitle: value })
   }
-  handleSearchSubmit = () => {
+  handleSearchSubmit = (event) => {
+    event.preventDefault()
     const { gameTitle } = this.state
     window.location.replace(`/game/${gameTitle}/mashes`)
   }
