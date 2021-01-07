@@ -11,3 +11,9 @@ The user is required to enter a game title, and they may enter an action for eac
 Users may also enter a game title in the search input in the nav which will render a search list of all mash cards for that title by any user. Once again, users may click on the game title to see the mash. If a user clicks on another user's mash, the delte button is replaced with a like button, where you may 'like' mashes posted by other users. Users may only like the mash of another user one time. 
 
 Map Mash is a PERN application, cosisting of PostgreSQL, Express, React and Node.js.
+
+![picture](./public/screenshots/Homepage.png)
+![picture](./public/screenshots/Mash.png)
+![picture](./public/screenshots/OtherUserMash.png)
+![picture](./public/screenshots/SearchList.png)
+
