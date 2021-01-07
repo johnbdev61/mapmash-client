@@ -4,7 +4,7 @@ import Bind from '../Bind/Bind'
 import MashApiService from '../../services/mash-api-service'
 import ReactMoment from 'react-moment'
 import moment from 'moment'
-import './MyMash.css'
+import './Mash.css'
 
 export default class Mash extends React.Component {
   state = { mash: {} }

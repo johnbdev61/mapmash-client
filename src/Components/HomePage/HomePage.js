@@ -1,5 +1,5 @@
 import React from 'react'
-import MyMashCard from '../MyMashCard/MyMashCard'
+import MyMashCard from '../MashCard/MyMashCard'
 import './HomePage.css'
 import MashApiService from '../../services/mash-api-service'
 

@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-.header-logged-in {
+.landing-page-logged-in {
   text-align: center;
 }
 
@@ -23,7 +23,7 @@
   margin-right: 5px;
 }
 
-.instructions-header {
+.instructions-landing-page {
   font-family: 'jura', sans-serif;
   text-align: center;
 }

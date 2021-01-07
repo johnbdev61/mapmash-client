@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Nav from '../Nav/Nav'
-import Header from '../Header/Header'
+import LandingPage from '../LandingPage/LandingPage'
 import LoginForm from '../LoginForm/LoginForm'
 import HomePage from '../HomePage/HomePage'
 import MashForm from '../MashForm/MashForm'
-import Mash from '../MyMash/MyMash'
+import Mash from '../Mash/Mash'
 import config from '../../config'
 import SearchList from '../SearchList/SearchList'
 import RegistrationForm from '../RegistrationForm/RegistrationForm'
@@ -36,6 +36,7 @@ export default class App extends Component {
     const { gameTitle } = this.state
     window.location.replace(`/game/${gameTitle}/mashes`)
   }
+  // renders the nav while user is logged in
   handleLoginStatus = (isLoggedIn) => {
     this.setState({ isLoggedIn })
   }
@@ -85,8 +86,7 @@ export default class App extends Component {
           body: JSON.stringify(newBind),
         })
           .then((res) => res.json())
-          .then((result) => {
-          })
+          .then((result) => {})
         window.location.replace('/home')
       })
   }
@@ -105,7 +105,7 @@ export default class App extends Component {
           )}
           <Switch>
             <Route exact path='/'>
-              <Header handleLogoutClick={this.handleLogoutClick} />
+              <LandingPage handleLogoutClick={this.handleLogoutClick} />
             </Route>
             <Route path='/register'>
               <RegistrationForm />
