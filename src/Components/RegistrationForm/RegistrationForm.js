@@ -22,7 +22,6 @@ export default class RegistrationForm extends Component {
       .then((user) => {
         username.value = ''
         password.value = ''
-        console.log(this.state.isAuthenticated)
       })
       .catch((res) => {
         this.setState({ error: res.error })

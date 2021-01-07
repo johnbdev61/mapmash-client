@@ -19,16 +19,14 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    console.log('app re-mounting')
-    console.log(process.env)
     const userId = TokenService.getUserId()
     this.setState({ isLoggedIn: !!userId })
   }
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     this.setState({ isLoggedIn: false })
-    console.log('LOGGED OUT')
   }
+  // the next two functions handle the search functionality
   handleInputChange = (event) => {
     const { value } = event.target
     this.setState({ gameTitle: value })
@@ -52,7 +50,6 @@ export default class App extends Component {
   }
   handleCreateMash = (event) => {
     event.preventDefault()
-    console.log(event)
     const newMash = {
       game_title: event.target.game_title.value,
       notes: event.target.notes.value,
@@ -68,7 +65,6 @@ export default class App extends Component {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log('MASH ID', result.id)
         let formData = new FormData(event.target)
         let newBind = []
         for (let [key, value] of formData) {
@@ -80,7 +76,6 @@ export default class App extends Component {
             })
           }
         }
-        console.log('NEW BIND', newBind)
         fetch(`${config.API_ENDPOINT}/binds`, {
           method: 'POST',
           headers: {
@@ -91,14 +86,12 @@ export default class App extends Component {
         })
           .then((res) => res.json())
           .then((result) => {
-            console.log('ALL BINDS', result)
           })
         window.location.replace('/home')
       })
   }
 
   render() {
-    console.log(window.location.pathname)
     return (
       <BrowserRouter>
         <div className='App'>

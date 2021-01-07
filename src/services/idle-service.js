@@ -25,11 +25,6 @@ const AuthApiService = {
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
       )
       .then((res) => {
-        /*
-          whenever a logint is performed:
-          1. save the token in local storage
-          2. queue a call to the refresh endpoint based on the JWT's exp value
-        */
         TokenService.saveAuthToken(res.authToken)
         TokenService.queueCallbackBeforeExpiry(() => {
           AuthApiService.postRefreshToken()
@@ -48,11 +43,6 @@ const AuthApiService = {
         !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
       )
       .then((res) => {
-        /*
-          similar logic to whenever a user logs in, the only differences are:
-          - we don't need to queue the idle timers again as the user is already logged in.
-          - we'll catch the error here as this refresh is happening behind the scenes
-        */
         TokenService.saveAuthToken(res.authToken)
         TokenService.queueCallbackBeforeExpiry(() => {
           AuthApiService.postRefreshToken()
@@ -60,7 +50,6 @@ const AuthApiService = {
         return res
       })
       .catch((err) => {
-        console.log('refresh token request error')
         console.error(err)
       })
   },

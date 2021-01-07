@@ -14,7 +14,6 @@ export default class Mash extends React.Component {
     },
   }
   componentDidMount() {
-    console.log('MASH ID', this.props.match.params.mashId)
     MashApiService.getMash(this.props.match.params.mashId).then((mash) =>
       this.setState({ mash })
     )
@@ -33,7 +32,6 @@ export default class Mash extends React.Component {
   }
 
   render() {
-    // console.log('USER ID', this.state.mash.author_id)
     return (
       <>
         <section className='mash'>

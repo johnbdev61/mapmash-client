@@ -21,13 +21,19 @@ class MashForm extends React.Component {
             <div className='input-wrapper game-label'>
               <label htmlFor='enter-game'>Game</label>
               <br />
-              <input aria-label='Game Title' type='text' name='game_title' />
+              <input
+                className='input-margin'
+                aria-label='Game Title'
+                type='text'
+                name='game_title'
+              />
             </div>
             <br />
             <div className='input-wrapper'>
               <label htmlFor='a-button'>A Button</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='A Button'
                 type='text'
                 name='A Button'
@@ -39,6 +45,7 @@ class MashForm extends React.Component {
               <label htmlFor='b-button'>B Button</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='B Button'
                 type='text'
                 name='B Button'
@@ -50,6 +57,7 @@ class MashForm extends React.Component {
               <label htmlFor='x-button'>X Button</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='X Button'
                 type='text'
                 name='X Button'
@@ -61,6 +69,7 @@ class MashForm extends React.Component {
               <label htmlFor='y-button'>Y Button</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Y Button'
                 type='text'
                 name='Y Button'
@@ -72,6 +81,7 @@ class MashForm extends React.Component {
               <label htmlFor='right-bumper'>Right Bumper</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Right Bumper'
                 type='text'
                 name='Right Bumper'
@@ -83,6 +93,7 @@ class MashForm extends React.Component {
               <label htmlFor='left-bumper'>Left Bumper</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Left Bumper'
                 type='text'
                 name='Left Bumper'
@@ -94,6 +105,7 @@ class MashForm extends React.Component {
               <label htmlFor='right-trigger'>Right Trigger</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Right Trigger'
                 type='text'
                 name='Right Trigger'
@@ -105,6 +117,7 @@ class MashForm extends React.Component {
               <label htmlFor='left-trigger'>Left Trigger</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Left Trigger'
                 type='text'
                 name='Left Trigger'
@@ -116,6 +129,7 @@ class MashForm extends React.Component {
               <label htmlFor='left-stick'>Left Stick</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Left Stick'
                 type='text'
                 name='Left Stick'
@@ -127,6 +141,7 @@ class MashForm extends React.Component {
               <label htmlFor='left-click'>Left Stick Click</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Left Click'
                 type='text'
                 name='Left Click'
@@ -138,6 +153,7 @@ class MashForm extends React.Component {
               <label htmlFor='right-stick'>Right Stick</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Right Stick'
                 type='text'
                 name='Right Stick'
@@ -149,6 +165,7 @@ class MashForm extends React.Component {
               <label htmlFor='right-click'>Right Stick Click</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='Right Click'
                 type='text'
                 name='Right Click'
@@ -160,6 +177,7 @@ class MashForm extends React.Component {
               <label htmlFor='dpad-up'>D-Pad Up</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='D-Pad Up'
                 type='text'
                 name='D-Pad Up'
@@ -171,6 +189,7 @@ class MashForm extends React.Component {
               <label htmlFor='dpad-right'>D-Pad Right</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='D-Pad Right'
                 type='text'
                 name='D-Pad Right'
@@ -182,6 +201,7 @@ class MashForm extends React.Component {
               <label htmlFor='dpad-down'>D-Pad Down</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='D-Pad Down'
                 type='text'
                 name='D-Pad Down'
@@ -193,6 +213,7 @@ class MashForm extends React.Component {
               <label htmlFor='dpad-left'>D-Pad Left</label>
               <br />
               <input
+                className='input-margin'
                 aria-label='D-Pad Left'
                 type='text'
                 name='D-Pad Left'
@@ -205,7 +226,7 @@ class MashForm extends React.Component {
               <br />
               <textarea
                 aria-label='Notes'
-                className='notes'
+                className='notes input-margin'
                 name='notes'
                 id='note-section'
                 cols='50'

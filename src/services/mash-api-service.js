@@ -52,7 +52,6 @@ const MashApiService = {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log('ALL BINDS', result)
       })
   },
 }

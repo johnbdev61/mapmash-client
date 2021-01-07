@@ -30,6 +30,10 @@
   margin: 0;
 }
 
+.search-game {
+  margin-left: 5px;
+}
+
 .create-mash,
 .log-out-home {
   padding: 10px;
