@@ -16,6 +16,7 @@ export default class App extends Component {
     mashes: [],
     gameTitle: '',
     isLoggedIn: false,
+    isRegistered: false,
   }
 
   componentDidMount() {
@@ -39,6 +40,9 @@ export default class App extends Component {
   // renders the nav while user is logged in
   handleLoginStatus = (isLoggedIn) => {
     this.setState({ isLoggedIn })
+  }
+  handleRegisterStatus = (isRegistered) => {
+    this.setState({ isRegistered })
   }
   handleDeletedMash = (mashId) => {
     const updatedMashes = this.state.mashes.filter((mash) => {
@@ -108,7 +112,7 @@ export default class App extends Component {
               <LandingPage handleLogoutClick={this.handleLogoutClick} />
             </Route>
             <Route path='/register'>
-              <RegistrationForm />
+              <RegistrationForm onRegister={this.handleRegisterStatus} />
             </Route>
             <Route path='/login'>
               <LoginForm onLogin={this.handleLoginStatus} />

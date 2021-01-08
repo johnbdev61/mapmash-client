@@ -13,15 +13,14 @@ export default class RegistrationForm extends Component {
   handleSubmit = (ev) => {
     ev.preventDefault()
     const { username, password } = ev.target
-
-    this.setState({ error: null, isAuthenticated: true })
+    this.setState({ error: null })
     AuthApiService.postUser({
       username: username.value,
       password: password.value,
     })
-      .then((user) => {
-        username.value = ''
-        password.value = ''
+      .then(() => {
+        this.setState({ isAuthenticated: true })
+        this.props.onRegister(true)
       })
       .catch((res) => {
         this.setState({ error: res.error })
